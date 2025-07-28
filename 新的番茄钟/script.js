@@ -395,10 +395,7 @@ function loadCustomMusic() {
         // 添加BGM文件夹中的音乐作为默认播放列表
         const bgmFiles = [
             { name: '2_23_AM', path: './BGM/2_23_AM.mp3' },
-            { name: '黄昏ノ町', path: './BGM/黄昏ノ町.m4a' },
-            { name: '샛별프로젝트-여름날의 사춘기', path: './BGM/샛별프로젝트-여름날의 사춘기.mp3' },
             { name: '像晴天像雨天', path: './BGM/像晴天像雨天.mp3' },
-            { name: '春の予感 (1 hr BGM)', path: './BGM/春の予感.m4a' }
         ];
         
         bgmFiles.forEach(music => {
