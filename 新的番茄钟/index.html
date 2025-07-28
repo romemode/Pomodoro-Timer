@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>番茄工作法计时器</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-clock"></i> 番茄工作法计时器</h1>
+        <div class="mode-indicator" id="modeIndicator"><i class="fas fa-laptop-code"></i> 工作模式</div>
+        
+        <div class="time-settings">
+            <div class="setting-group">
+                <h3><i class="fas fa-laptop-code"></i> 工作时间</h3>
+                <div class="time-options">
+                    <button class="time-option active" data-time="25" data-type="work">25分钟</button>
+                    <button class="time-option" data-time="60" data-type="work">60分钟</button>
+                    <div class="custom-time">
+                        <input type="number" id="customWorkTime" min="1" max="120" placeholder="自定义">
+                        <button class="time-option" data-type="work" id="setCustomWorkTime">设置</button>
+                    </div>
+                </div>
+            </div>
+            <div class="setting-group">
+                <h3><i class="fas fa-coffee"></i> 休息时间</h3>
+                <div class="time-options">
+                    <button class="time-option active" data-time="5" data-type="break">5分钟</button>
+                    <button class="time-option" data-time="10" data-type="break">10分钟</button>
+                    <div class="custom-time">
+                        <input type="number" id="customBreakTime" min="1" max="30" placeholder="自定义">
+                        <button class="time-option" data-type="break" id="setCustomBreakTime">设置</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="timer-container">
+            <div class="timer" id="timer">25:00</div>
+            <div class="timer-ring" id="timerRing"></div>
+        </div>
+        
+        <div class="controls">
+            <button id="startBtn" class="btn start"><i class="fas fa-play"></i> 开始</button>
+            <button id="pauseBtn" class="btn pause"><i class="fas fa-pause"></i> 暂停</button>
+            <button id="resetBtn" class="btn reset"><i class="fas fa-redo-alt"></i> 重置</button>
+        </div>
+        
+        <div class="stats-container">
+            <div class="stat-box">
+                <h3>今日完成</h3>
+                <p><span id="todayCount">0</span> 番茄钟</p>
+            </div>
+            <div class="stat-box">
+                <h3>工作时间</h3>
+                <p><span id="workTime">0</span> 分钟</p>
+            </div>
+            <div class="stat-box">
+                <h3>休息时间</h3>
+                <p><span id="breakTime">0</span> 分钟</p>
+            </div>
+        </div>
+        
+        <div class="history-container">
+            <h2>历史记录</h2>
+            <div class="history-list" id="historyList">
+                <!-- 历史记录将在这里动态添加 -->
+            </div>
+        </div>
+        
+        <div class="music-player">
+            <h2><i class="fas fa-music"></i> 音乐播放器</h2>
+            <div class="music-controls">
+                <audio id="audioPlayer" controls>
+                    <source src="" type="audio/mpeg">
+                    您的浏览器不支持音频播放。
+                </audio>
+                <button id="playModeBtn" class="btn play-mode"><i class="fas fa-exchange-alt"></i> 顺序播放</button>
+                <div class="playlist" id="playlist">
+                    <h3><i class="fas fa-headphones"></i> 播放列表</h3>
+                    <ul>
+                        <!-- 播放列表将由JavaScript动态加载 -->
+                    </ul>
+                    <div class="add-music-form">
+                        <div class="form-group">
+                            <h4><i class="fas fa-music"></i> 从本地文件夹加载音乐</h4>
+                            <input type="file" id="localMusicInput" accept="audio/*" multiple class="file-input">
+                            <button id="loadLocalMusicBtn" class="btn add-music"><i class="fas fa-plus-circle"></i> 加载本地音乐</button>
+                            <button id="clearLocalMusicBtn" class="btn reset" style="margin-top: 10px;"><i class="fas fa-trash-alt"></i> 清除本地音乐记录</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
